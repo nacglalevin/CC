@@ -602,7 +602,7 @@ def main():
                 if mode == "post":
                         for _ in range(thread_num):
                                 th = threading.Thread(target = post,args=(socks_type,))
-                                                 th .setDaemon(True)
+                                th .setDaemon(True)
                                 th.start()
                                 #print("Threads "+str(i+1)+" created")
                 elif mode == "cc":
