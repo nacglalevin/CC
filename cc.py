@@ -36,7 +36,7 @@ Python3 version Beta
 │          + Fast Port Re-use                 │
 │          + Added Random client ip           │
 ├─────────────────────────────────────────────┤
-│ Link: https://github.com/Leeon123/CC-attack │
+│ Link: https://github.com/nacglalevin/CC     │
 └─────────────────────────────────────────────┘''')
 
 acceptall = [
