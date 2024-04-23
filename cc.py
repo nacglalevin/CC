@@ -301,7 +301,7 @@ def slow(conn,socks_type):
                                 sys.stdout.flush()
                                 pass
 nums = 0
-def checking(lines,socks_type,ms):#Proxy checker coded by Leeon123
+def checking(lines,socks_type,ms):#Proxy checker coded by Lalevin Martin
         global nums
         global proxies
         try:#dirty fix
@@ -333,7 +333,7 @@ def checking(lines,socks_type,ms):#Proxy checker coded by Leeon123
                         err +=1
         nums += 1
 
-def check_socks(ms):#Coded by Leeon123
+def check_socks(ms):#Coded by Lalevin
         global nums
         thread_list=[]
         for lines in list(proxies):
@@ -608,7 +608,7 @@ def main():
                 elif mode == "cc":
                         for _ in range(thread_num):
                                 th = threading.Thread(target = cc,args=(socks_type,))
-                 th.setDaemon(True)
+                                th.setDaemon(True)
                                 th.start()
 
                                         #print("Threads "+str(i+1)+" created")
