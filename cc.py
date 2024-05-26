@@ -20,7 +20,7 @@ print ('''
           CCCCC/   CCCCC/   |___________|/
 >--------------------------------------------->
 Version 3.7.1 (2022/3/24)
-                              C0d3d by L330n123
+                             Lalevin
 ┌─────────────────────────────────────────────┐
 │        Tos: Don't attack .gov website       │
 ├─────────────────────────────────────────────┤
@@ -29,7 +29,7 @@ Version 3.7.1 (2022/3/24)
 │          [+] Optimization                   │
 │          [+] Changed Varible Name           │
 ├─────────────────────────────────────────────┤
-│ Link: https://github.com/Leeon123/CC-attack │
+│ Link: https://github.com/nacglalevin/cc │
 └─────────────────────────────────────────────┘''')
 
 acceptall = [
