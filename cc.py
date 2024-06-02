@@ -19,13 +19,7 @@ import os
 
 
 
-print ('''
-           /////    /////    /////////////
-          CCCCC/   CCCCC/   | CC-attack |/
-         CC/      CC/       |-----------|/ 
-         CC/      CC/       |  Layer 7  |/ 
-         CC/////  CC/////   | ddos tool |/ 
-          CCCCC/   CCCCC/   |___________|/
+print ("""
 >--------------------------------------------->
 Version 3.7.1 (2022/3/24)
                              Lalevin
@@ -38,7 +32,7 @@ Version 3.7.1 (2022/3/24)
 │          [+] Changed Varible Name           │
 ├─────────────────────────────────────────────┤
 │ Link: https://github.com/nacglalevin/cc │
-└─────────────────────────────────────────────┘''')
+└─────────────────────────────────────────────┘""")
 
 acceptall = [
                 "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
