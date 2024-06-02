@@ -1,3 +1,11 @@
+"""
+========================================
+Name:cc Author: Lalevin Martin
+ Mailbox: zzlyxht@outlook.com                                                
+ Github: http://github.com/nacglalevin
+Written in 2022-3-24
+==================NACG==================
+"""
 import requests
 import socket
 import socks
