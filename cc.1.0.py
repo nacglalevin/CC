@@ -1,7 +1,7 @@
 """
 ========================================
 Name:cc.1.0  Author: Lalevin Martin
- Mailbox: zzlyxht@outlook.com                                                
+ Mailbox: rsjdcl@gmail.com                                             
  Github: http://github.com/nacglalevin
 Written in 2024-4-24
 ==================NACG==================
