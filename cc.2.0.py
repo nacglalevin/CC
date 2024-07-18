@@ -1,5 +1,12 @@
 #!/usr/bin/env python
- 
+ """
+========================================
+Name:CC.2.0 Author: Lalevin Martin
+ Mailbox: zzlyxht@outlook.com                                                
+ Github: http://github.com/nacglalevin
+Written in 2024-4-24
+==================NACG==================
+"""
 if __name__ == '__main__':
     #unittest.main()
     pass
